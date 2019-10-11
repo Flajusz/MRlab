@@ -52,6 +52,10 @@ namespace Lab2
             while (linia !="exit") {
                 Console.WriteLine(licznik++);
                 linia= Console.ReadLine();
+                if (licznik == 5) {
+                    Console.WriteLine("Wyprodukowano maksymalna ilość");
+                    break;
+                } 
             }
 
         }
