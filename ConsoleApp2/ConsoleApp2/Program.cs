@@ -86,6 +86,7 @@ namespace Lab2
                 }
                 if (licznik == 5) {
                     Console.WriteLine("Dość na dziś");
+                    break;
                 }
 
             }
