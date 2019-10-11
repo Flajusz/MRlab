@@ -48,7 +48,7 @@ namespace Lab2
             Console.WriteLine(wynik);
             */
             int licznik=1;
-            string linia= string.Empty;
+            string linia= Console.ReadLine();
             while (linia !="exit") {
                 Console.WriteLine(licznik++);
                 linia= Console.ReadLine();
