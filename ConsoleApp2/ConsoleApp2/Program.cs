@@ -60,26 +60,32 @@ namespace Lab2
              */
             int licznik = 1;
             int[] liczniki = {1, 1, 1};
-            string linia = Console.ReadLine();
+            string linia = string.Empty;
             while (linia != "exit") {
-                Console.WriteLine(licznik++);
+              /*  Console.WriteLine(licznik++);*/
                 linia = Console.ReadLine();
                 switch (linia)
                 {
                     case "A":
                         Console.WriteLine(liczniki[0]++);
+                        licznik++;
                         break;
                     case "B":
                         Console.WriteLine(liczniki[1]++);
+                        licznik++;
                         break;
                     case "C":
                         Console.WriteLine(liczniki[2]++);
+                        licznik++;
                         break;
                     default:
                         Console.WriteLine("zly kod porduktu");
                         break;
 
 
+                }
+                if (licznik == 5) {
+                    Console.WriteLine("Dość na dziś");
                 }
 
             }
