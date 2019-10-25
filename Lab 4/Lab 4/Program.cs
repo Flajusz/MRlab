@@ -18,7 +18,19 @@ namespace Lab_4
                     return wynik;
 
         }
-            static int odejmij(int liczba1, int liczba2 )
+        static int dodaj(int liczba1, int liczba2, int liczba3)
+        {
+            return dodaj(dodaj(liczba1, liczba2), liczba3);
+        }
+        static int dodaj(string tekst1, string tekst2)
+        {
+            int liczba1 = Convert.ToInt32(tekst1);
+            int liczba2 = Convert.ToInt32(tekst2);
+            return liczba1 + liczba2;
+        }
+
+
+        static int odejmij(int liczba1, int liczba2 )
         {
               int wynik=liczba1-liczba2;
               return wynik;
@@ -49,6 +61,7 @@ namespace Lab_4
             }
            return (double) liczba1/liczba2;
         }
+        
 
 
         static void Main(string[] args)
@@ -64,7 +77,7 @@ namespace Lab_4
             switch (operacja)
         {
                 case "+":
-                    wynik=dodaj(liczba1, liczba2);
+                    wynik=dodaj(tekst1, tekst2);
                     Console.WriteLine(wynik);
                     break;
                 case "-":
@@ -86,7 +99,6 @@ namespace Lab_4
                        {
                         Console.WriteLine("podzielone prze 0");
                        }
-                    break;
 
                     try
                     {
@@ -95,8 +107,10 @@ namespace Lab_4
                     }
                     catch (DivideByZeroException)
                     {
-                        Console.WriteLine("podzlono przez 0");
+                        Console.WriteLine("podzielono przez 0");
                     }
+                    break;
+
                 default:
                     break;
 
