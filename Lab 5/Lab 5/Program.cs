@@ -18,11 +18,11 @@ namespace Lab_5
 
             Ksiazka[,,] a = new Ksiazka[3, 6, 10];
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < a.GetLength(0); i++)
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < a.GetLength(1); j++)
                 {
-                    for (int k = 0; k < 10; k++)
+                    for (int k = 0; k < a.GetLength(2); k++)
                     {
                         a[i, j, k] = new Ksiazka("Pan Tadeusz", "Mickiewicz", i, j, k);
 
@@ -32,11 +32,11 @@ namespace Lab_5
             }
             a[1, 4, 6] = new Ksiazka("Potop", "Sienkiewicz", 1, 4, 6);
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < a.GetLength(0); i++)
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < a.GetLength(1); j++)
                 {
-                    for (int k = 0; k < 10; k++)
+                    for (int k = 0; k < a.GetLength(2); k++)
                     {
                         Console.WriteLine("Regał[{0}],Półka[{1}],Miejsce[{2}]:", i, j, k);
                         Console.WriteLine(a[i, j, k].Tytul + " , " + a[i, j, k].Autor);
