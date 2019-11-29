@@ -83,10 +83,10 @@ namespace Lab_4
                         Console.WriteLine("podzielono przez 0");
                     }
                     
-             break;
+                break;
 
-             default:
-             break;
+                default:
+                break;
 
             }
        */
