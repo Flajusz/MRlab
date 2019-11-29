@@ -13,14 +13,14 @@ namespace Lab_8
         public class osoba
         {
 
-            public DateTime wiek;
+            public int wiek;
             public int id;
             public string imie;
             public string nazwisko;
             public string kraj;
             
 
-            public osoba(int id, string imie, string nazwisko, DateTime wiek, string kraj)
+            public osoba(int id, string imie, string nazwisko, int wiek, string kraj)
             {
                 this.id = id;
                 this.imie = imie;
@@ -33,9 +33,10 @@ namespace Lab_8
   
         static void Main(string[] args)
         {
+
             var NameGen = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
             var LastNameGen = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
-            var Age = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime());
+            var Age = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
             var Country = RandomizerFactory.GetRandomizer(new FieldOptionsCountry());
             List<osoba> lista = Enumerable.Range(100, 150)
                 .Select(x =>
@@ -57,6 +58,7 @@ namespace Lab_8
                 
 
             }
+
 
 
 
