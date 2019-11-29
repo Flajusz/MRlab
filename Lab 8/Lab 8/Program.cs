@@ -12,18 +12,22 @@ namespace Lab_8
     {
         public class osoba
         {
+
+            public DateTime wiek;
             public int id;
             public string imie;
             public string nazwisko;
+            public string kraj;
+            
 
-            public osoba(int id, string imie, string nazwisko)
+            public osoba(int id, string imie, string nazwisko, DateTime wiek, string kraj)
             {
                 this.id = id;
                 this.imie = imie;
                 this.nazwisko = nazwisko;
+                this.wiek = wiek;
+                this.kraj = kraj;
             }
-
-          
         }
 
   
@@ -31,12 +35,17 @@ namespace Lab_8
         {
             var NameGen = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
             var LastNameGen = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
+            var Age = RandomizerFactory.GetRandomizer(new FieldOptionsDateTime());
+            var Country = RandomizerFactory.GetRandomizer(new FieldOptionsCountry());
             List<osoba> lista = Enumerable.Range(100, 150)
                 .Select(x =>
                 new osoba(
                     x,
-                    NameGen.Generate()
-                    ,LastNameGen.Generate()
+                    NameGen.Generate(),
+                    LastNameGen.Generate(),
+                    Age.Generate().Value,
+                    Country.Generate()
+
                     )
                 ).ToList();
 
@@ -44,7 +53,7 @@ namespace Lab_8
 
             foreach (var item in posortowane)
             {
-                Console.WriteLine($"{item.id} {item.imie} {item.nazwisko}");
+                Console.WriteLine($"{item.id} {item.imie} {item.nazwisko} {item.wiek} {item.kraj}");
                 
 
             }
