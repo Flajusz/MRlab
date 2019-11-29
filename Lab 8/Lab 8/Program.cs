@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using RandomDataGenerator.Randomizers;
+using RandomDataGenerator.FieldOptions;
 
 
 namespace Lab_8
@@ -13,11 +15,48 @@ namespace Lab_8
             public int id;
             public string imie;
             public string nazwisko;
+
+            public osoba(int id, string imie, string nazwisko)
+            {
+                this.id = id;
+                this.imie = imie;
+                this.nazwisko = nazwisko;
+            }
+
+          
         }
+
   
         static void Main(string[] args)
         {
-            List<int> lista = Enumerable.Range(100, 150).ToList();
+            var NameGen = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
+            var LastNameGen = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
+            List<osoba> lista = Enumerable.Range(100, 150)
+                .Select(x =>
+                new osoba(
+                    x,
+                    NameGen.Generate()
+                    ,LastNameGen.Generate()
+                    )
+                ).ToList();
+
+            List<osoba> posortowane = lista.OrderBy(x=>x.nazwisko).ThenBy(x=>x.imie).ToList();
+
+            foreach (var item in posortowane)
+            {
+                Console.WriteLine($"{item.id} {item.imie} {item.nazwisko}");
+                
+
+            }
+
+
+
+
+
+
+
+
+            /*
             List<int> podzielnie_na_3 = lista.Where(x => x % 3 == 0).ToList();
             double srednia = podzielnie_na_3.Average();
             double suma = podzielnie_na_3.Sum();
@@ -32,13 +71,18 @@ namespace Lab_8
                 }
                 ).ToList();
             osoby[45].nazwisko = "ABC";
-            List<string> nazwiska = osoby.Select(x => x.nazwisko).ToList();
-            List<string> unikalne_nazwiska = osoby.Select(x => x.nazwisko).Distinct().ToList();
+            osoba szukana = osoby.Where(x => x.nazwisko == "AAAA").First();
+            Console.WriteLine($"{szukana.id} {szukana.imie} {szukana.nazwisko}");
 
-            foreach (var item in unikalne_nazwiska)
+            */
+
+         //   List<string> nazwiska = osoby.Select(x => x.nazwisko).ToList();
+         //   List<string> unikalne_nazwiska = osoby.Select(x => x.nazwisko).Distinct().ToList();
+
+           /* foreach (var item in osoby)
             {
                 Console.WriteLine(item);
-            }
+            }*/
 
            /* int nr_strony = 2;
             int element = 10;
@@ -55,6 +99,9 @@ namespace Lab_8
 
            // Console.WriteLine("Srednia to: " + srednia);
            // Console.WriteLine("Suma to: " + suma);
+
+
+
         }
        
 
