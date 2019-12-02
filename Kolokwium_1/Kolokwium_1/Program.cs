@@ -10,6 +10,7 @@ namespace Kolokwium_1
     {
         static void Main(string[] args)
         {
+            // kolokwium zostało oddane na pendrive podczas zajęć a  jako  iż nie mam pliku źródłowego zamieszczam tylko link i komentarz
         }
     }
 }
