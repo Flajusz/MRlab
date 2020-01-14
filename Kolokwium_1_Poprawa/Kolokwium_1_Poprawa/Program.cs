@@ -55,12 +55,12 @@ namespace Kolokwium1_Poprawa
 
         static void Zadanie3()
         {
-            int[,] tab_1 = new int[4, 3];
-            int[,] tab_2 = new int[3, 8];
+            int[,] tab_1 = new int[4, 2];
+            int[,] dwa = new int[2, 5];
 
-            int max_wierszy = Math.Max(tab_1.GetLength(0), tab_2.GetLength(0));
+            int max_wierszy = Math.Max(tab_1.GetLength(0), dwa.GetLength(0));
 
-            int max_kolummn = Math.Max(tab_1.GetLength(1), tab_2.GetLength(1));
+            int max_kolummn = Math.Max(tab_1.GetLength(1), dwa.GetLength(1));
 
             int[,] wynik = new int[max_wierszy, max_kolummn];
 
@@ -73,12 +73,12 @@ namespace Kolokwium1_Poprawa
                 }
             }
 
-            for (int i = 0; i < tab_2.GetLength(0); i++)
+            for (int i = 0; i < dwa.GetLength(0); i++)
             {
-                for (int j = 0; j < tab_2.GetLength(1); j++)
+                for (int j = 0; j < dwa.GetLength(1); j++)
                 {
-                    tab_2[i, j] = 0;
-                    wynik[i, j] += tab_2[i, j];
+                    dwa[i, j] = 2 ;
+                    wynik[i, j] += dwa[i, j];
                 }
             }
 
@@ -92,7 +92,7 @@ namespace Kolokwium1_Poprawa
             }
         }
 
-        static int[,] NewTable1()
+        static int[,] Tabela_1()
         {
             int[,] tab1 = new int[3, 5];
 
@@ -111,15 +111,15 @@ namespace Kolokwium1_Poprawa
             return tab1;
         }
 
-        static int[][] NewTable2()
+        static int[][] Tabela_2()
         {
             Random rnd = new Random();
 
-            int[][] tab2 = new int[rnd.Next(1, 10)][];
+            int[][] tab2 = new int[rnd.Next(1, 15)][];
 
             for (int i = 0; i < tab2.Length; i++)
             {
-                tab2[i] = new int[rnd.Next(1, 10)];
+                tab2[i] = new int[rnd.Next(1, 15)];
             }
 
             for (int i = 0; i < tab2.Length; i++)
@@ -177,15 +177,16 @@ namespace Kolokwium1_Poprawa
 
         static void Main(string[] args)
         {
-            Console.Write("Podaj numer zadania: ");
-            string linia = Console.ReadLine();
 
-            switch (linia)
+            Console.Write("Podaj numer zadania: ");
+            string numer = Console.ReadLine();
+
+            switch (numer)
             {
 
                 case "1":
 
-                    Console.Write("Podaj liczbe n: ");
+                    Console.Write("Podaj n: ");
                     if (int.TryParse(Console.ReadLine(), out int liczba))
                     {
                         Console.WriteLine(Zadanie1(liczba));
@@ -200,7 +201,7 @@ namespace Kolokwium1_Poprawa
                     }
                     catch (DivideByZeroException)
                     {
-                        Console.WriteLine("Nie można dzielić przez 0");
+                        Console.WriteLine("Nie dziel przez 0");
                     }
                     break;
 
@@ -210,17 +211,17 @@ namespace Kolokwium1_Poprawa
 
                 case "4":
                     Console.WriteLine();
-                    Zadanie4(NewTable1());
-                    Zadanie4(NewTable2());
+                    Zadanie4(Tabela_1());
+                    Zadanie4(Tabela_2());
                     break;
 
                 case "5":
-                    //Zadanie5
-                    EBook eBook = new EBook("Bolesław Prus", "Lalka", new DateTime(1890 / 1 / 1), new DateTime(2019 / 12 / 15), 25.55, 10);
+                    
+                    EBook eBook = new EBook("Adam Mickiewicz", "Dziady cz II", new DateTime(1823 / 1 / 1), new DateTime(2020 / 1 / 07), 25.55, 10);
                     break;
 
                 default:
-                    Console.WriteLine("Brak zadania o podanym numerze");
+                    Console.WriteLine("podaj właściwy numer");
                     break;
             }
 
