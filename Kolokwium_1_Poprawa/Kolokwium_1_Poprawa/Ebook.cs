@@ -35,7 +35,7 @@ namespace Kolokwium1_Poprawa
             }
             set
             {
-                if (value.Date < _dataOstatniegoZakupu.Date) _dataOstatniegoZakupu = value;
+                if (value.Date > _dataOstatniegoZakupu.Date) _dataOstatniegoZakupu = value;
             }
         }
 

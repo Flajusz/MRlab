@@ -56,11 +56,11 @@ namespace Kolokwium1_Poprawa
         static void Zadanie3()
         {
             int[,] tab_1 = new int[4, 2];
-            int[,] dwa = new int[2, 5];
+            int[,] tab_2 = new int[2, 5];
 
-            int max_wierszy = Math.Max(tab_1.GetLength(0), dwa.GetLength(0));
+            int max_wierszy = Math.Max(tab_1.GetLength(0), tab_2.GetLength(0));
 
-            int max_kolummn = Math.Max(tab_1.GetLength(1), dwa.GetLength(1));
+            int max_kolummn = Math.Max(tab_1.GetLength(1), tab_2.GetLength(1));
 
             int[,] wynik = new int[max_wierszy, max_kolummn];
 
@@ -73,12 +73,12 @@ namespace Kolokwium1_Poprawa
                 }
             }
 
-            for (int i = 0; i < dwa.GetLength(0); i++)
+            for (int i = 0; i < tab_2.GetLength(0); i++)
             {
-                for (int j = 0; j < dwa.GetLength(1); j++)
+                for (int j = 0; j < tab_2.GetLength(1); j++)
                 {
-                    dwa[i, j] = 2 ;
-                    wynik[i, j] += dwa[i, j];
+                    tab_2[i, j] = 2 ;
+                    wynik[i, j] += tab_2[i, j];
                 }
             }
 
