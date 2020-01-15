@@ -217,7 +217,7 @@ namespace Kolokwium1_Poprawa
 
                 case "5":
                     
-                    EBook eBook = new EBook("Adam Mickiewicz", "Dziady cz II", new DateTime(1823 / 1 / 1), new DateTime(2020 / 1 / 07), 25.55, 10);
+                    EBook eBook = new EBook("Adam Mickiewicz", "Dziady cz II", new DateTime(1823, 1 , 1), new DateTime(2020 , 1 , 07), 25.55, 10);
                     break;
 
                 default:
