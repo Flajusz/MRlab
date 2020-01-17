@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace Lab_8._1
+namespace Lab_8._2
 {
     class Program
     {
+        private static bool _canPrint = true;
         static void Main(string[] args)
         {
             var printer = new Printer();
@@ -23,6 +23,9 @@ namespace Lab_8._1
                 }
 
             }
+
+            Console.ReadKey();
+
         }
         static void PaperJammedEventHandler(object sender, PaperJammedEventArgs e)
         {
@@ -33,8 +36,10 @@ namespace Lab_8._1
         {
             Console.WriteLine($"Please replace {e.InkColor}");
             _canPrint = false;
-
-
         }
+
+       
     }
 }
+
+
