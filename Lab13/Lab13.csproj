@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVPersonToString.cs" />
+    <Compile Include="IOReadercs.cs" />
+    <Compile Include="IReader.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Phone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader.cs" />
+    <Compile Include="writer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
