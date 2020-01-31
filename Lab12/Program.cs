@@ -40,7 +40,7 @@ namespace Lab12
                 case null:
                     Console.WriteLine("nie podano pasażera");
                     break;
-                case Rencista ren when ren.okres_waznosci > System.DateTime.Now && ren.Zwolnienie==true:
+                case Rencista ren when ren.okres_waznosci >= System.DateTime.Now && ren.Zwolnienie==true:
                     Console.WriteLine("To rencista z ważnym zwolnieniem");
                     break;
                 case Rencista _:
