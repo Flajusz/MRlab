@@ -1,0 +1,48 @@
+<?xml version="1.0"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900px" height="600" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid">
+<rect x="0" y="0" width="3" height="2" stroke="black" fill="none" stroke-width="0.01"/>
+<defs>
+
+<g id ="triangle">
+<polygon points="1.4,1.9 1.55,1.05 1.7,1.9"/>
+</g>
+
+<g id = "rect">
+<line x1="1" y1="1" x2="2.2" y2="1.25" stroke="red"  stroke-width="0.1" />
+</g>
+
+
+<g id = "polygon">
+<polygon points="0,1 0.5,0.87 0.87,0.5 1,0 0.87,-0.5 0.5,-0.87 0,-1 -0.5,-0.87 -0.87,-0.5 -1,0 -0.87,0.5 -0.5,0.87" fill="yellow">
+<animateTransform
+    attributeName="transform"
+    type="rotate"
+    from="0 0 0"
+    to="360 0 0"
+    dur="3s"
+    repeatCount="indefinite" /> 
+</polygon>
+</g>
+</defs>
+
+<use xlink:href = "#polygon" transform = "translate(1.03,1.05) scale(0.25,0.25)"/>
+<use xlink:href = "#polygon" transform = "translate(1.96,1.25) scale(0.25,0.25)"/>
+<use xlink:href = "#rect" transform = "translate(0.2,0.25) scale(0.8,0.8)"/>
+<use xlink:href = "#triangle" transform = "translate(0.1,0.2) scale(0.9,0.9)" fill="blue"/>
+
+<use xlink:href = "#polygon" transform = "translate(0.22,0.31) scale(0.2,0.2)"/>
+<use xlink:href = "#polygon" transform = "translate(0.96,0.47) scale(0.2,0.2)"/>
+<use xlink:href = "#rect" transform = "translate(-0.45,-0.35) scale(0.65,0.65)"/>
+<use xlink:href = "#triangle" transform = "translate(-0.5,-0.35) scale(0.7,0.7)" fill="Magenta"/>
+
+<use xlink:href = "#polygon" transform = "translate(1.96,0.35) scale(0.15,0.15)"/>
+<use xlink:href = "#polygon" transform = "translate(2.51,0.46) scale(0.15,0.15)"/>
+<use xlink:href = "#rect" transform = "translate(1.45,-0.17) scale(0.5,0.5)"/>
+<use xlink:href = "#triangle" transform = "translate(1.45,-0.15) scale(0.5,0.5)" fill="green"/>
+
+</svg>
+ 
+ 
+ 
+
